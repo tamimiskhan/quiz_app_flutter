@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:quiz_app_flutter/constants.dart';
+import 'package:quiz_app_flutter/screens/quiz/components/progress_bar.dart';
 
 class Body extends StatelessWidget {
   const Body({
@@ -21,38 +22,7 @@ class Body extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
             child: Column(
               children: [
-                Container(
-                  width: double.infinity,
-                  height: 35,
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Color(0xFF3F4738), width: 3),
-                    borderRadius: BorderRadius.circular(50),
-                  ),
-                  child: Stack(
-                    children: [
-                      LayoutBuilder(
-                        builder: (context, constraints) => Container(
-                          width: constraints.maxWidth * 0.5,
-                          decoration: BoxDecoration(
-                            gradient: kPrimaryGradient,
-                            borderRadius: BorderRadius.circular(50),
-                          ),
-                        ),
-                      ),
-                      Positioned.fill(
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding/2),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                            Text('18 sec'),
-                            SvgPicture.asset('assets/icons/clock.svg')
-                        ],
-                      ),
-                          ))
-                    ],
-                  ),
-                ),
+                ProgressBar(),
               ],
             ),
           )
@@ -61,3 +31,4 @@ class Body extends StatelessWidget {
     );
   }
 }
+
